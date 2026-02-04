@@ -1,6 +1,6 @@
 import streamlit as st
 import json
-from agents import GeneratorAgent, ReviewerAgent
+from agent import GeneratorAgent, ReviewerAgent
 
 st.set_page_config(page_title="AI Educational Content Generator", layout="wide")
 
@@ -107,4 +107,5 @@ if st.button("🚀 Generate Content", type="primary"):
             st.balloons()
         
         status_text.text("✅ Process Complete!")
+
 
