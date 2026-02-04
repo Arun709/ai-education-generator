@@ -2,10 +2,17 @@ import json
 from typing import Dict, List
 import requests
 
+
 class GeneratorAgent:
     """Agent responsible for generating educational content"""
 
     def __init__(self, api_key: str, provider: str = "openai"):
+        """Initialize Generator Agent
+
+        Args:
+            api_key: API key for LLM provider
+            provider: Either 'openai' or 'groq'
+        """
         self.api_key = api_key
         self.provider = provider.lower()
 
@@ -18,9 +25,16 @@ class GeneratorAgent:
             self.model = "gpt-4o-mini"
 
     def generate(self, input_data: Dict) -> Dict:
-        """Generate educational content for given grade and topic"""
-        grade = input_data["grade"]
-        topic = input_data["topic"]
+        """Generate educational content for given grade and topic
+
+        Args:
+            input_data: Dict with 'grade' and 'topic' keys
+
+        Returns:
+            Dict with 'explanation' and 'mcqs' keys
+        """
+        grade = input_data.get("grade", 4)
+        topic = input_data.get("topic", "General topic")
 
         prompt = f"""You are an educational content creator. Generate age-appropriate content for Grade {grade} students.
 
@@ -51,11 +65,4 @@ Guidelines:
 
         return self._call_llm(prompt)
 
-    def refine(self, input_data: Dict, feedback: List[str]) -> Dict:
-        """Refine content based on reviewer feedback"""
-        grade = input_data["grade"]
-        topic = input_data["topic"]
-
-        feedback_text = "\n".join([f"- {fb}" for fb in feedback])
-
-        prompt = f"""You are an educational content creator. The previous content was rejected. Create IMPROVE
+    def refine(self, input_data: D
