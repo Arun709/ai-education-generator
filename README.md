@@ -561,6 +561,17 @@ Packages: 2
 For project-specific issues, refer to GitHub repository issues section.
 
 ---
+### Supported Providers
+
+**OpenAI:**
+- Models: gpt-4o-mini, gpt-4o
+- Get key: https://platform.openai.com/api-keys
+
+**Groq (FREE):**
+- Models: llama-3.1-70b-versatile
+- Get key: https://console.groq.com/keys
+- Free tier: 30 requests/minute
+
 
 ## LICENSE
 [MIT License]
