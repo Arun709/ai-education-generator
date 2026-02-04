@@ -2,7 +2,7 @@
 
 An intelligent educational content generation system using AI agents to create and review grade-appropriate learning materials.
 
-##streamlit(https://ai-education-generator.streamlit.app/undefined)
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://ai-education-generator.streamlit.app/)
 
 ## Features
 
