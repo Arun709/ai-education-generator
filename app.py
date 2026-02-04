@@ -107,5 +107,3 @@ if st.button("🚀 Generate Content", type="primary"):
             st.balloons()
         
         status_text.text("✅ Process Complete!")
-
-
